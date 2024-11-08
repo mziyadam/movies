@@ -1,36 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>{{appName}}</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/mziyadam/Beranda/master/profildiri.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <style>
-        h1 a {
-    color: #000000;
-    text-decoration: none;
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding: 1em;
         }
     </style>
-<body>
-    <h1><a href="https://filemoon.sx/e/lznn7odqca34/_5Bfilmapik.info_5D-road-house.mp4">Road House (1989)</a></h1>
-    <iframe src="https://filemoon.sx/e/lznn7odqca34/_5Bfilmapik.info_5D-road-house.mp4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-    <hr>    
-    <h1><a href="https://filemoon.sx/e/zr741z5pvpid/_5Bfilmapik.info_5D-may-who.mp4">May Who? (2015)</a></h1>
-    <iframe src="https://filemoon.sx/e/zr741z5pvpid/_5Bfilmapik.info_5D-may-who.mp4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-    <hr>
-    <h1><a href="https://filemoon.sx/e/c5hmgo0e26pr/_5Bfilmapik.info_5D-borat-cultural-learnings-of-america-for-make-benefit-glorious-nation-of-kazakhstan.mp4">Borat 1 (2006)</a></h1>
-    <iframe src="https://filemoon.sx/e/c5hmgo0e26pr/_5Bfilmapik.info_5D-borat-cultural-learnings-of-america-for-make-benefit-glorious-nation-of-kazakhstan.mp4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-    <hr>
-    <h1><a href="https://filemoon.sx/e/qfs7c7j54cbl/_5Bfilmapik.info_5D-kingdom-of-heaven.mp4">Kingdom of Heaven (2005)</a></h1>
-    <iframe src="https://filemoon.sx/e/qfs7c7j54cbl/_5Bfilmapik.info_5D-kingdom-of-heaven.mp4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-    <hr>
-    <h1><a href="https://filemoon.sx/e/n6x2ff77wb21/1WTTgh_TlXwknN40tSwsmP0-fBAat2_HK">Borat 2 (2020)</a></h1>
-    <iframe src="https://filemoon.sx/e/n6x2ff77wb21/1WTTgh_TlXwknN40tSwsmP0-fBAat2_HK" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-    <hr>
-    <h1><a href="https://filemoon.sx/e/08t61pl39v7g/_5Bfilmapik.info_5D-the-king-of-staten-island.mp4">The King of Staten Island (2020)</a></h1>
-    <iframe src="https://filemoon.sx/e/08t61pl39v7g/_5Bfilmapik.info_5D-the-king-of-staten-island.mp4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
-    <hr>
-    <h3>Source</h3>
-    <h4><a href="https://filmapik.international/">https://filmapik.international</a>/</h4>
-</body>
+</head>
+<script src="https://unpkg.com/vue@3"></script>
+
+<div id="app">
+
+    <body>
+        <div v-for="serie in series">
+            <hr>
+            <h1>
+                {{ serie.seriesName }}
+            </h1>
+            <hr>
+            <h2 v-for="episode in serie.episodes">
+                <a :href="episode.link">
+                    {{episode.episode}}
+                </a>
+            </h2>
+            <hr>
+        </div>
+    </body>
+</div>
+
+<script>
+    const { createApp } = Vue
+
+    createApp({
+        data() {
+            return {
+                appName: 'Movies',
+                series: [
+                    {
+                        seriesName: 'Stranger Things',
+                        episodes: [
+                            {
+                                episode:"S1 E1",
+                                link:"https://youtu.be/saPyrWUfDGc"
+                            },
+                            {
+                                episode:"S1 E2",
+                                link:"https://youtu.be/ozJXKapRWu0"
+                            },
+                            {
+                                episode:"S1 E3",
+                                link:"https://youtu.be/saPyrWUfDGc"
+                            },
+                            {
+                                episode:"S1 E4",
+                                link:"https://youtu.be/tGSW4HmCBGM"
+                            },
+                            {
+                                episode:"S1 E5",
+                                link:"https://youtu.be/JvnvqRkvt6Y"
+                            },
+                            {
+                                episode:"S1 E6",
+                                link:"https://youtu.be/1Kxxpj3LA2g"
+                            },
+                            {
+                                episode:"S1 E7",
+                                link:"https://youtu.be/0JSDK-r8WC0"
+                            },
+                            {
+                                episode:"S1 E8",
+                                link:"https://youtu.be/v45rQwZuY8c"
+                            },
+                        ]
+                    },
+                ]
+
+            }
+        },
+
+    }).mount('#app')
+</script>
+
+
 </html>
