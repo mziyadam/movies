@@ -25,7 +25,7 @@
 <div id="app">
 
     <body>
-        <div v-for="serie in series">
+        <div v-for="serie in series.slice().reverse()">
             <hr>
             <h1>
                 {{ serie.seriesName }}
@@ -321,6 +321,15 @@
         {
             episode: "Youtube",
             link: "https://youtu.be/Ui78FbGt8TY"
+        },
+    ]
+},
+{
+    seriesName: 'The Prestige (2006)',
+    episodes: [
+        {
+            episode: "Youtube",
+            link: "https://youtu.be/H7a6D6iwzI4"
         },
     ]
 },
